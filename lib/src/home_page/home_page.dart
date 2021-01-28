@@ -109,7 +109,7 @@ class HomePage extends StatelessWidget {
         itemBuilder: (_, position) {
           var userData = userList[position];
           return CircularTextCardImage(
-            40,
+            35,
             userData.name,
             userData.picture,
           );
