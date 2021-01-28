@@ -98,20 +98,21 @@ class HomePage extends StatelessWidget {
   ];
 
   _getUserList(List<UserResponse> userList) => GridView.builder(
-    shrinkWrap: true,
-    primary: false,
-    physics: NeverScrollableScrollPhysics(),
-    itemCount: userList.length,
-    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-      crossAxisCount: 4,
-    ),
-    itemBuilder: (_, position) {
-      var userData = userList[position];
-      return CircularTextCardImage(
-        40,
-        userData.name,
-        userData.picture,
+        shrinkWrap: true,
+        primary: false,
+        physics: NeverScrollableScrollPhysics(),
+        itemCount: userList.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 4,
+          childAspectRatio: Get.height / 1000,
+        ),
+        itemBuilder: (_, position) {
+          var userData = userList[position];
+          return CircularTextCardImage(
+            40,
+            userData.name,
+            userData.picture,
+          );
+        },
       );
-    },
-  );
 }
